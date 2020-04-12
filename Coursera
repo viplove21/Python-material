@@ -1,0 +1,357 @@
+Syntax
+When writing code, using correct syntax is super important. Even a small typo, like a missing parentheses or an extra comma, can cause a syntax error and the code won't execute at all. Yikes. If your code results in an error or an exception, pay close attention to syntax and watch out for minor mistakes.
+If your syntax is correct, but the script has unexpected behavior or output, this may be due to a semantic problem. Remember that syntax is the rules of how code is constructed, while semantics are the overall effect the code has. It is possible to have syntactically correct code that runs successfully, but doesn't do what we want it to do.
+When working with the code blocks in exercises for this course, be mindful of syntax errors, along with the overall result of your code. Just because you fixed a syntax error doesn't mean that the code will have the desired effect when it runs! Once you’ve fixed an error in your code, don't forget to submit it to have your work checked.
+More
+The best way to learn any programming language is to practice it on your own as much as you can. If you have Python installed on your computer, you can execute the interpreter by running the python3 command (or just python on Windows), and you can close it by typing exit() or Ctrl-D.
+If you don’t already have Python installed on your machine, that’s alright. We’ll explain how to install it in an upcoming course.
+In the meantime, you can still practice by using one of the many online Python interpreters or codepads available online. There’s not much difference between an interpreter and a codepad. An interpreter is more interactive than a codepad, but they both let you execute code and see the results.
+Below, you’ll find links to some of the most popular online interpreters and codepads. Give them a go to find your favorite.
+https://www.python.org/shell/
+https://www.onlinegdb.com/online_python_interpreter
+https://repl.it/languages/python3
+https://www.tutorialspoint.com/execute_python3_online.php
+https://rextester.com/l/python3_online_compiler
+https://trinket.io/python3
+Additional Python resources
+While this course will give you information about how Python works and how to write scripts in Python, you’ll likely want to find out more about specific parts of the language. Here are some great ways to help you find additional info: 
+Read the official Python documentation.
+Search for answers or ask a question on Stack Overflow. 
+Subscribe to the Python tutor mailing list, where you can ask questions and collaborate with other Python learners.
+Subscribe to the Python-announce mailing list to read about the latest updates in the language.
+Python history and current status
+Python was released almost 30 years ago and has a rich history. You can read more about it on the History of Python Wikipedia page or in the section on the history of the software from the official Python documentation.
+Python has recently been called the fastest growing programming language. If you're interested in why this is and how it’s measured, you can find out more in these articles:
+The Incredible Growth of Python (Stack Overflow)
+Why is Python Growing So Quickly - Future Trends (Netguru)
+By the numbers: Python community trends in 2017/2018 (Opensource.com)
+Developer Survey Results 2018 (Stack Overflow)
+
+
+
+Expressions & Variables
+In Python, text in between quotes -- either single or double quotes -- is a string data type. An integer is a whole number, without a fraction, while a float is a real number that can contain a fractional part. For example, 1, 7, 342 are all integers, while 5.3, 3.14159 and 6.0 are all floats. When attempting to mix incompatible data types, you may encounter a TypeError. You can always check the data type of something using the type() function.
+As we saw earlier in the video, some data types can be mixed and matched due to implicit conversion. Implicit conversion is where the interpreter helps us out and automatically converts one data type into another, without having to explicitly tell it to do so.
+By contrast, explicit conversion is where we manually convert from one data type to another by calling the relevant function for the data type we want to convert to. We used this in our video example when we wanted to print a number alongside some text. Before we could do that, we needed to call the str() function to convert the number into a string. Once the number was explicitly converted to a string, we could join it with the rest of our textual string and print the result.
+Functions
+We looked at a few examples of built-in functions in Python, but being able to define your own functions is incredibly powerful. We start a function definition with the def keyword, followed by the name we want to give our function. After the name, we have the parameters, also called arguments, for the function enclosed in parentheses. A function can have no parameters, or it can have multiple parameters. Parameters allow us to call a function and pass it data, with the data being available inside the function as variables with the same name as the parameters. Lastly, we put a colon at the end of the line.
+After the colon, the function body starts. It’s important to note that in Python the function body is delimited by indentation. This means that all code indented to the right following a function definition is part of the function body. The first line that’s no longer indented is the boundary of the function body. It’s up to you how many spaces you use when indenting -- just make sure to be consistent. So if you choose to indent with four spaces, you need to use four spaces everywhere in your code.
+Sometimes we don't want a function to simply run and finish. We may want a function to manipulate data we passed it and then return the result to us. This is where the concept of return values comes in handy. We use the return keyword in a function, which tells the function to pass data back. When we call the function, we can store the returned value in a variable. Return values allow our functions to be more flexible and powerful, so they can be reused and called multiple times.
+
+Functions can even return multiple values. Just don't forget to store all returned values in variables! You could also have a function return nothing, in which case the function simply exits.
+Conditionals
+In Python, we can use comparison operators to compare values. When a comparison is made, Python returns a boolean result, or simply a True or False. 
+To check if two values are the same, we can use the equality operator: == 
+To check if two values are not the same, we can use the not equals operator: != 
+We can also check if values are greater than or lesser than each other using > and <. If you try to compare data types that aren’t compatible, like checking if a string is greater than an integer, Python will throw a TypeError. 
+We can make very complex comparisons by joining statements together using logical operators with our comparison operators. These logical operators are and, or, and not. When using the and operator, both sides of the statement being evaluated must be true for the whole statement to be true. When using the or operator, if either side of the comparison is true, then the whole statement is true. Lastly, the not operator simply inverts the value of the statement immediately following it. So if a statement evaluates to True, and we put the not operator in front of it, it would become False.
+We can use the concept of branching to have our code alter its execution sequence depending on the values of variables. We can use an if statement to evaluate a comparison. We start with the if keyword, followed by our comparison. We end the line with a colon. The body of the if statement is then indented to the right. If the comparison is True, the code inside the if body is executed. If the comparison evaluates to False, then the code block is skipped and will not be run.
+We just covered the if statement, which executes code if an evaluation is true and skips the code if it’s false. But what if we wanted the code to do something different if the evaluation is false? We can do this using the else statement. The else statement follows an if block, and is composed of the keyword else followed by a colon. The body of the else statement is indented to the right, and will be expected if the above if statement doesn’t execute.
+We also touched on the modulo operator, which is represented by the percent sign: %. This operator performs integer division, but only returns the remainder of this division operation. If we’re dividing 5 by 2, the quotient is 2, and the remainder is 1. Two 2s can go into 5, leaving 1 left over. So 5%2 would return 1. Dividing 10 by 5 would give us a quotient of 2 with no remainder, since 5 can go into 10 twice with nothing left over. In this case, 10%2 would return 0, as there is no remainder.
+Building off of the if and else blocks, which allow us to branch our code depending on the evaluation of one statement, the elif statement allows us even more comparisons to perform more complex branching. Very similar to the if statements, an elif statement starts with the elif keyword, followed by a comparison to be evaluated. This is followed by a colon, and then the code block on the next line, indented to the right. An elif statement must follow an if statement, and will only be evaluated if the if statement was evaluated as false. You can include multiple elif statements to build complex branching in your code to do all kinds of powerful things!
+First Programming Concepts Cheat Sheet
+Functions and Keywords
+Functions and keywords are the building blocks of a language’s syntax.
+Functions are pieces of code that perform a unit of work. In the examples we've seen so far, we've only encountered the print() function, which prints a message to the screen. We'll learn about a lot of other functions in later lessons but, if you're too curious to wait until then, you can discover all the functions available here.
+Keywords are reserved words that are used to construct instructions. We briefly encountered for and in in our first Python example, and we'll use a bunch of other keywords as we go through the course. For reference, these are all the reserved keywords:
+False	class	finally	is	return
+None	continue	for	lambda	try
+True	def	from	nonlocal	while
+and	del	global	not	with
+as	elif	if	or	yield
+assert	else	import	pass	
+break	except	in	raise	
+You don't need to learn this list; we'll dive into each keyword as we encounter them. In the meantime, you can see examples of keyword usage here.
+Arithmetic operators
+Python can operate with numbers using the usual mathematical operators, and some special operators, too. These are all of them (we'll explore the last two in later videos).
+a + b = Adds a and b
+a - b = Subtracts b from a
+a * b = Multiplies a and b
+a / b = Divides a by b
+a ** b = Elevates a to the power of b. For non integer values of b, this becomes a root (i.e. a**(1/2) is the square root of a)
+a // b = The integer part of the integer division of a by b
+a % b = The remainder part of the integer division of a by b
+
+Conditionals Cheat Sheet
+In earlier videos, we took a look at some of the built-in Python operators that allow us to compare values, and some logical operators we can use to combine values. We also learned how to use operators in if-else-elif blocks. 
+It’s a lot to learn but, with practice, it gets easier to remember it all. In the meantime, this handy cheat sheet gives you all the information you need at a glance. 
+Comparison operators
+a == b: a is equal to b
+a != b: a is different than b
+a < b: a is smaller than b
+a <= b: a is smaller or equal to b
+a > b: a is bigger than b
+a >= b: a is bigger or equal to b
+Logical operators
+a and b: True if both a and b are True. False otherwise.
+a or b: True if either a or b or both are True. False if both are False.
+not a: True if a is False, False if a is True.
+Branching blocks
+In Python, we branch our code using if, else and elif. This is the branching syntax:
+if condition1:
+  if-block
+elif condition2:	
+  elif-block
+else:
+  else-block
+Remember: The if-block will be executed if condition1 is True. The elif-block will be executed if condition1 is False and condition2 is True. The else block will be executed when all the specified conditions are false.
+
+While loop
+A while loop will continuously execute code depending on the value of a condition. It begins with the keyword while, followed by a comparison to be evaluated, then a colon. On the next line is the code block to be executed, indented to the right. Similar to an if statement, the code in the body will only be executed if the comparison is evaluated to be true. What sets a while loop apart, however, is that this code block will keep executing as long as the evaluation statement is true. Once the statement is no longer true, the loop exits and the next line of code will be executed.
+Variable Initialization
+You'll want to watch out for a common mistake: forgetting to initialize variables. If you try to use a variable without first initializing it, you'll run into a NameError. This is the Python interpreter catching the mistake and telling you that you’re using an undefined variable. The fix is pretty simple: initialize the variable by assigning the variable a value before you use it.
+Another common mistake to watch out for that can be a little trickier to spot is forgetting to initialize variables with the correct value. If you use a variable earlier in your code and then reuse it later in a loop without first setting the value to something you want, your code may wind up doing something you didn't expect. Don't forget to initialize your variables before using them!
+Infinite loops and code blocks
+Another easy mistake that can happen when using loops is introducing an infinite loop. An infinite loop means the code block in the loop will continue to execute and never stop. This can happen when the condition being evaluated in a while loop doesn't change. Pay close attention to your variables and what possible values they can take. Think about unexpected values, like zero.
+In the Coursera code blocks, you may see an error message that reads "Evaluation took more than 5 seconds to complete." This means that the code encountered an infinite loop, and it timed out after 5 seconds. You should take a closer look at the code and variables to spot where the infinite loop is.
+
+For loops
+For loops allow you to iterate over a sequence of values. Let's take the example from the beginning of the video:
+for x in range(5):
+  print(x)
+Similar to if statements and while loops, for loops begin with the keyword for with a colon at the end of the line. Just like in function definitions, while loops and if statements, the body of the for loop begins on the next line and is indented to the right. But what about the stuff in between the for keyword and the colon? In our example, we’re using the range() function to create a sequence of numbers that our for loop can iterate over. In this case, our variable x points to the current element in the sequence as the for loop iterates over the sequence of numbers. Keep in mind that in Python and many programming languages, a range of numbers will start at 0, and the list of numbers generated will be one less than the provided value. So range(5) will generate a sequence of numbers from 0 to 4, for a total of 5 numbers.
+Bringing this all together, the range(5) function will create a sequence of numbers from 0 to 4. Our for loop will iterate over this sequence of numbers, one at a time, making the numbers accessible via the variable x and the code within our loop body will execute for each iteration through the sequence. So for the first loop, x will contain 0, the next loop, 1, and so on until it reaches 4. Once the end of the sequence comes up, the loop will exit and the code will continue.
+The power of for loops comes from the fact that it can iterate over a sequence of any kind of data, not just a range of numbers. You can use for loops to iterate over a list of strings, such as usernames or lines in a file.
+Not sure whether to use a for loop or a while loop? Remember that a while loop is great for performing an action over and over until a condition has changed. A for loop works well when you want to iterate over a sequence of elements.
+Range() function
+Previously we had used the range() function by passing it a single parameter, and it generated a sequence of numbers from 0 to one less than we specified. But the range() function can do much more than that. We can pass in two parameters: the first specifying our starting point, the second specifying the end point. Don't forget that the sequence generated won't contain the last element; it will stop one before the parameter specified.
+The range() function can take a third parameter, too. This third parameter lets you  alter the size of each step. So instead of creating a sequence of numbers incremented by 1, you can generate a sequence of numbers that are incremented by 5.
+To quickly recap the range() function when passing one, two, or three parameters:
+One parameter will create a sequence, one-by-one, from zero to one less than the parameter.
+Two parameters will create a sequence, one-by-one, from the first parameter to one less than the second parameter.
+Three parameters will create a sequence starting with the first parameter and stopping before the second parameter, but this time increasing each step by the third parameter.
+
+Loops Cheat Sheet
+Check out below for a run down of the syntax for while loops and for loops.
+While Loops
+A while loop executes the body of the loop while the condition remains True.
+Syntax:
+while condition:
+    body
+Things to watch out for!
+Failure to initialize variables. Make sure all the variables used in the loop’s condition  are initialized before the loop.
+Unintended infinite loops. Make sure that the body of the loop modifies the variables used in the condition, so that the loop will eventually end for all possible values of the variables.
+Typical use:
+While loops are mostly used when there’s an unknown number of operations to be performed, and a condition needs to be checked at each iteration.
+
+For Loops
+A for loop iterates over a sequence of elements, executing the body of the loop for each element in the sequence.
+Syntax:
+for variable in sequence
+    body
+The range() function:
+range() generates a sequence of integer numbers. It can take one, two, or three parameters:
+range(n): 0, 1, 2, ... n-1
+range(x,y): x, x+1, x+2, ... y-1
+range(p,q,r): p, p+r, p+2r, p+3r, ... q-1 (if it's a valid increment)
+Common pitfalls:
+Forgetting that the upper limit of a range() isn’t included.
+Iterating over non-sequences. Integer numbers aren’t iterable. Strings are iterable letter by letter, but that might not be what you want.
+Typical use:
+For loops are mostly used when there's a pre-defined sequence or range of numbers to iterate.
+Break & Continue
+You can interrupt both while and for loops using the break keyword. We normally do this to interrupt a cycle due to a separate condition.
+You can use the continue keyword to skip the current iteration and continue with the next one. This is typically used to jump ahead when some of the elements of the sequence aren’t relevant.
+If you want to learn more, check out this wiki page on for loops.
+
+String indexing and slicing
+String indexing allows you to access individual characters in a string. You can do this by using square brackets and the location, or index, of the character you want to access. It's important to remember that Python starts indexes at 0. So to access the first character in a string, you would use the index [0]. If you try to access an index that’s larger than the length of your string, you’ll get an IndexError. This is because you’re trying to access something that doesn't exist! You can also access indexes from the end of the string going towards the start of the string by using negative values. The index [-1] would access the last character of the string, and the index [-2] would access the second-to-last character.
+You can also access a portion of a string, called a slice or a substring. This allows you to access multiple characters of a string. You can do this by creating a range, using a colon as a separator between the start and end of the range, like [2:5]. This range is similar to the range() function we saw previously. It includes the first number, but goes to one less than the last number. You can also easily reference the start or end of the string by leaving one value blank. For example [:5] would give us all characters from the start to the fourth character in the string. We can also use [5:] to get the characters from the fourth character to the end of the string.
+Basic String methods
+In Python, strings are immutable. This means that they can't be modified. So if we wanted to fix a typo in a string, we can't simply modify the wrong character. We would have to create a new string with the typo corrected. We can also assign a new value to the variable holding our string.
+If we aren't sure what the index of our typo is, we can use the string method index to locate it and return the index. Let's imagine we have the string "lions tigers and bears" in the variable animals. We can locate the index that contains the letter g using animals.index("g"), which will return the index; in this case 8. We can also use substrings to locate the index where the substring begins. animals.index("bears") would return 17, since that’s the start of the substring. If there’s more than one match for a substring, the index method will return the first match. If we try to locate a substring that doesn't exist in the string, we’ll receive a ValueError explaining that the substring was not found.
+We can avoid a ValueError by first checking if the substring exists in the string. This can be done using the in keyword. We saw this keyword earlier when we covered for loops. In this case, it's a conditional that will be either True or False. If the substring is found in the string, it will be True. If the substring is not found in the string, it will be False. Using our previous variable animals, we can do "horses" in animals to check if the substring "horses" is found in our variable. In this case, it would evaluate to False, since horses aren’t included in our example string. If we did "tigers" in animals, we'd get True, since this substring is contained in our string.
+Advanced String methods
+We've covered a bunch of String class methods already, so let's keep building on those and run down some more advanced methods.
+The string method lower will return the string with all characters changed to lowercase. The inverse of this is the upper method, which will return the string all in uppercase. Just like with previous methods, we call these on a string using dot notation, like "this is a string".upper(). This would return the string "THIS IS A STRING". This can be super handy when checking user input, since someone might type in all lowercase, all uppercase, or even a mixture of cases.
+You can use the strip method to remove surrounding whitespace from a string. Whitespace includes spaces, tabs, and newline characters. You can also use the methods  lstrip and rstrip to remove whitespace only from the left or the right side of the string, respectively.
+The method count can be used to return the number of times a substring appears in a string. This can be handy for finding out how many characters appear in a string, or counting the number of times a certain word appears in a sentence or paragraph.
+If you wanted to check if a string ends with a given substring, you can use the method endswith. This will return True if the substring is found at the end of the string, and False if not.
+The isnumeric method can check if a string is composed of only numbers. If the string contains only numbers, this method will return True. We can use this to check if a string contains numbers before passing the string to the int() function to convert it to an integer, avoiding an error. Useful!
+We took a look at string concatenation using the plus sign, earlier. We can also use the join method to concatenate strings. This method is called on a string that will be used to join a list of strings. The method takes a list of strings to be joined as a parameter, and returns a new string composed of each of the strings from our list joined using the initial string. For example, " ".join(["This","is","a","sentence"]) would return the string "This is a sentence".
+The inverse of the join method is the split method. This allows us to split a string into a list of strings. By default, it splits by any whitespace characters. You can also split by any other characters by passing a parameter.
+String formatting
+You can use the format method on strings to concatenate and format strings in all kinds of powerful ways. To do this, create a string containing curly brackets, {}, as a placeholder, to be replaced. Then call the format method on the string using .format() and pass variables as parameters. The variables passed to the method will then be used to replace the curly bracket placeholders. This method automatically handles any conversion between data types for us. 
+If the curly brackets are empty, they’ll be populated with the variables passed in the order in which they're passed. However, you can put certain expressions inside the curly brackets to do even more powerful string formatting operations. You can put the name of a variable into the curly brackets, then use the names in the parameters. This allows for more easily readable code, and for more flexibility with the order of variables.
+You can also put a formatting expression inside the curly brackets, which lets you alter the way the string is formatted. For example, the formatting expression {:.2f} means that you’d format this as a float number, with two digits after the decimal dot. The colon acts as a separator from the field name, if you had specified one. You can also specify text alignment using the greater than operator: >. For example, the expression {:>3.2f} would align the text three spaces to the right, as well as specify a float number with two decimal places. String formatting can be very handy for outputting easy-to-read textual output.
+String Reference Cheat Sheet
+In Python, there are a lot of things you can do with strings. In this cheat sheet, you’ll find the most common string operations and string methods.
+String operations
+len(string) Returns the length of the string
+for character in string Iterates over each character in the string
+if substring in string Checks whether the substring is part of the string
+string[i] Accesses the character at index i of the string, starting at zero
+string[i:j] Accesses the substring starting at index i, ending at index j-1. If i is omitted, it's 0 by default. If j is omitted, it's len(string) by default.
+
+String methods
+string.lower() / string.upper() Returns a copy of the string with all lower / upper case characters
+string.lstrip() / string.rstrip() / string.strip() Returns a copy of the string without left / right / left or right whitespace
+string.count(substring) Returns the number of times substring is present in the string
+string.isnumeric() Returns True if there are only numeric characters in the string. If not, returns False.
+string.isalpha() Returns True if there are only alphabetic characters in the string. If not, returns False.
+string.split() / string.split(delimiter) Returns a list of substrings that were separated by whitespace / delimiter
+string.replace(old, new) Returns a new string where all occurrences of old have been replaced by new.
+delimiter.join(list of strings) Returns a new string with all the strings joined by the delimiter
+
+Formatting Strings Cheat Sheet
+Python offers different ways to format strings. In the video, we explained the format() method. In this reading, we'll highlight three different ways of formatting strings. For this course you only need to know the format() method. But on the internet, you might find any of the three, so it's a good idea to know that the others exist.
+Using the format() method
+The format method returns a copy of the string where the {} placeholders have been replaced with the values of the variables. These variables are converted to strings if they weren't strings already. Empty placeholders are replaced by the variables passed to format in the same order.
+# "base string with {} placeholders".format(variables)
+example = "format() method"
+formatted_string = "this is an example of using the {} on a string".format
+  (example)
+print(formatted_string)
+"""Outputs:
+this is an example of using the format() method on a string
+"""
+If the placeholders indicate a number, they’re replaced by the variable corresponding to that order (starting at zero).
+# "{0} {1}".format(first, second)
+first = "apple"
+second = "banana"
+third = "carrot"
+formatted_string = "{0} {2} {1}".format(first, second, third)
+print(formatted_string)
+"""Outputs:
+apple carrot banana
+"""
+If the placeholders indicate a field name, they’re replaced by the variable corresponding to that field name. This means that parameters to format need to be passed indicating the field name.
+
+# "{var1} {var2}".format(var1=value1, var2=value2)
+
+1
+"{:exp1} {:exp2}".format(value1, value2)
+If the placeholders include a colon, what comes after the colon is a formatting expression. See below for the expression reference.
+Official documentation for the format string syntax
+
+1
+2
+# {:d} integer value
+'{:d}'.format(10.5) → '10'
+Formatting expressions
+Expr	Meaning	Example
+{:d}	integer value	'{:d}'.format(10.5) → '10'
+{:.2f}	floating point with that many decimals	'{:.2f}'.format(0.5) → '0.50'
+{:.2s}	string with that many characters	'{:.2s}'.format('Python') → 'Py'
+{:<6s}	string aligned to the left that many spaces	'{:<6s}'.format('Py') → 'Py    '
+{:>6s}	string aligned to the right that many spaces	'{:<6s}'.format('Py') → '    Py'
+{:^6s}	string centered in that many spaces	'{:<6s}'.format('Py') → '  Py '
+Check out the official documentation for all available expressions.
+Old string formatting (Optional)
+The format() method was introduced in Python 2.6. Before that, the % (modulo) operator could be used to get a similar result. While this method is no longer recommended for new code, you might come across it in someone else's code. This is what it looks like:
+"base string with %s placeholder" % variable
+The % (modulo) operator returns a copy of the string where the placeholders indicated by %  followed by a formatting expression are replaced by the variables after the operator.
+"base string with %d and %d placeholders" % (value1, value2)
+To replace more than one value, the values need to be written between parentheses. The formatting expression needs to match the value type.
+"%(var1) %(var2)" % {var1:value1, var2:value2}
+Variables can be replaced by name using a dictionary syntax (we’ll learn about dictionaries in an upcoming video).
+"Item: %s - Amount: %d - Price: %.2f" % (item, amount, price)
+The formatting expressions are mostly the same as those of the format() method. 
+Check out the official documentation for old string formatting.
+Formatted string literals (Optional)
+This feature was added in Python 3.6 and isn’t used a lot yet. Again, it's included here in case you run into it in the future, but it's not needed for this or any upcoming courses.
+A formatted string literal or f-string is a string that starts with 'f' or 'F' before the quotes. These strings might contain {} placeholders using expressions like the ones used for format method strings.
+The important difference with the format method is that it takes the value of the variables from the current context, instead of taking the values from parameters.
+Examples:
+>>> name = "Micah"
+>>> print(f'Hello {name}')
+Hello Micah
+>>> item = "Purple Cup"
+>>> amount = 5
+>>> price = amount * 3.25
+>>> print(f'Item: {item} - Amount: {amount} - Price: {price:.2f}')
+Item: Purple Cup - Amount: 5 - Price: 16.25
+Check out the official documentation for f-strings.
+
+Lists
+Lists in Python are defined using square brackets, with the elements stored in the list separated by commas: list = ["This", "is", "a", "list"]. You can use the len() function to return the number of elements in a list: len(list) would return 4. You can also use the in keyword to check if a list contains a certain element. If the element is present, it will return a True boolean. If the element is not found in the list, it will return False. For example, "This" in list would return True in our example. Similar to strings, lists can also use indexing to access specific elements in a list based on their position. You can access the first element in a list by doing list[0], which would allow you to access the string "This".
+In Python, lists and strings are quite similar. They’re both examples of sequences of data. Sequences have similar properties, like (1) being able to iterate over them using for loops; (2) support indexing; (3) using the len function to find the length of the sequence; (4) using the plus operator + in order to concatenate; and (5) using the in keyword to check if the sequence contains a value. Understanding these concepts allows you to apply them to other sequence types as well.
+-x.append(“”)
+-x.insert(0,“”)
+-x.remove(“”)
+-x.pop(0)
+-x[2]=””- replaces the content in the list for position 2
+
+While lists and strings are both sequences, a big difference between them is that lists are mutable. This means that the contents of the list can be changed, unlike strings, which are immutable. You can add, remove, or modify elements in a list.
+You can add elements to the end of a list using the append method. You call this method on a list using dot notation, and pass in the element to be added as a parameter. For example, list.append("New data") would add the string "New data" to the end of the list called list.
+If you want to add an element to a list in a specific position, you can use the method insert. The method takes two parameters: the first specifies the index in the list, and the second is the element to be added to the list. So list.insert(0, "New data") would add the string "New data" to the front of the list. This wouldn't overwrite the existing element at the start of the list. It would just shift all the other elements by one. If you specify an index that’s larger than the length of the list, the element will simply be added to the end of the list.
+You can remove elements from the list using the remove method. This method takes an element as a parameter, and removes the first occurrence of the element. If the element isn’t found in the list, you’ll get a ValueError error explaining that the element was not found in the list.
+You can also remove elements from a list using the pop method. This method differs from the remove method in that it takes an index as a parameter, and returns the element that was removed. This can be useful if you don't know what the value is, but you know where it’s located. This can also be useful when you need to access the data and also want to remove it from the list.
+Finally, you can change an element in a list by using indexing to overwrite the value stored at the specified index. For example, you can enter list[0] = "Old data" to overwrite the first element in a list with the new string "Old data".
+As we mentioned earlier, strings and lists are both examples of sequences. Strings are sequences of characters, and are immutable. Lists are sequences of elements of any data type, and are mutable. The third sequence type is the tuple. Tuples are like lists, since they can contain elements of any data type. But unlike lists, tuples are immutable. They’re specified using parentheses instead of square brackets.
+You might be wondering why tuples are a thing, given how similar they are to lists. Tuples can be useful when we need to ensure that an element is in a certain position and will not change. Since lists are mutable, the order of the elements can be changed on us. Since the order of the elements in a tuple can't be changed, the position of the element in a tuple can have meaning. A good example of this is when a function returns multiple values. In this case, what gets returned is a tuple, with the return values as elements in the tuple. The order of the returned values is important, and a tuple ensures that the order isn’t going to change. Storing the elements of a tuple in separate variables is called unpacking. This allows you to take multiple returned values from a function and store each value in its own variable
+A sample program in Python for calculating multiples of 7 using only lists
+
+Multiples = []
+For x in range(1,11)
+Multiples.append(x*7)
+Print(multiples)
+
+[7,14,21,…..,70]
+
+Performing the above operation using list comprehensions
+
+Multiples = [x*7 for x in range(1,11)]
+Print(multiples)
+
+List comprehensions
+You can create lists from sequences using a for loop, but there’s a more streamlined way to do this: list comprehension. List comprehensions allow you to create a new list from a sequence or a range in a single line.
+For example, [ x*2 for x in range(1,11) ] is a simple list comprehension. This would iterate over the range 1 to 10, and multiply each element in the range by 2. This would result in a list of the multiples of 2, from 2 to 20.
+You can also use conditionals with list comprehensions to build even more complex and powerful statements. You can do this by appending an if statement to the end of the comprehension. For example, [ x for x in range(1,101) if x % 10 == 0 ] would generate a list containing all the integers divisible by 10 from 1 to 100. The if statement we added here evaluates each value in the range from 1 to 100 to check if it’s evenly divisible by 10. If it is, it gets added to the list.
+List comprehensions can be really powerful, but they can also be super complex, resulting in code that’s hard to read. Be careful when using them, since it might make it more difficult for someone else looking at your code to easily understand what the code is doing.
+Lists and Tuples Operations Cheat Sheet
+Lists and tuples are both sequences, so they share a number of sequence operations. But, because lists are mutable, there are also a number of methods specific just to lists. This cheat sheet gives you a run down of the common operations first, and the list-specific operations second.
+Common sequence operations
+len(sequence) Returns the length of the sequence
+for element in sequence Iterates over each element in the sequence
+if element in sequence Checks whether the element is part of the sequence
+sequence[i] Accesses the element at index i of the sequence, starting at zero
+sequence[i:j] Accesses a slice starting at index i, ending at index j-1. If i is omitted, it's 0 by default. If j is omitted, it's len(sequence) by default.
+for index, element in enumerate(sequence) Iterates over both the indexes and the elements in the sequence at the same time
+Check out the official documentation for sequence operations.
+List-specific operations and methods
+list[i] = x Replaces the element at index i with x
+list.append(x) Inserts x at the end of the list
+list.insert(i, x) Inserts x at index i
+list.pop(i) Returns the element a index i, also removing it from the list. If i is omitted, the last element is returned and removed.
+list.remove(x) Removes the first occurrence of x in the list
+list.sort() Sorts the items in the list
+list.reverse() Reverses the order of items of the list
+list.clear() Removes all the items of the list
+list.copy() Creates a copy of the list
+list.extend(other_list) Appends all the elements of other_list at the end of list
+Most of these methods come from the fact that lists are mutable sequences. For more info, see the official documentation for mutable sequences and the list specific documentation.
+List comprehension
+[expression for variable in sequence] Creates a new list based on the given sequence. Each element is the result of the given expression.
+[expression for variable in sequence if condition] Creates a new list based on the given sequence. Each element is the result of the given expression; elements only get added if the condition is true.
+
+Dictionaries
+
+Dictionaries are another data structure in Python. They’re similar to a list in that they can be used to organize data into collections. However, data in a dictionary isn't accessed based on its position. Data in a dictionary is organized into pairs of keys and values. You use the key to access the corresponding value. Where a list index is always a number, a dictionary key can be a different data type, like a string, integer, float, or even tuples.
+When creating a dictionary, you use curly brackets: {}. When storing values in a dictionary, the key is specified first, followed by the corresponding value, separated by a colon. For example, animals = { "bears":10, "lions":1, "tigers":2 } creates a dictionary with three key value pairs, stored in the variable animals. The key "bears" points to the integer value 10, while the key "lions" points to the integer value 1, and "tigers" points to the integer 2. You can access the values by referencing the key, like this: animals["bears"]. This would return the integer 10, since that’s the corresponding value for this key.
+You can also check if a key is contained in a dictionary using the in keyword. Just like other uses of this keyword, it will return True if the key is found in the dictionary; otherwise it will return False.
+Dictionaries are mutable, meaning they can be modified by adding, removing, and replacing elements in a dictionary, similar to lists. You can add a new key value pair to a dictionary by assigning a value to the key, like this: animals["zebras"] = 2. This creates the new key in the animal dictionary called zebras, and stores the value 2. You can modify the value of an existing key by doing the same thing. So animals["bears"] = 11 would change the value stored in the bears key from 10 to 11. Lastly, you can remove elements from a dictionary by using the del keyword. By doing del animals["lions"] you would remove the key value pair from the animals dictionary.
+You can iterate over dictionaries using a for loop, just like with strings, lists, and tuples. This will iterate over the sequence of keys in the dictionary. If you want to access the corresponding values associated with the keys, you could use the keys as indexes. Or you can use the items method on the dictionary, like dictionary.items(). This method returns a tuple for each element in the dictionary, where the first element in the tuple is the key and the second is the value.
+If you only wanted to access the keys in a dictionary, you could use the keys() method on the dictionary: dictionary.keys(). If you only wanted the values, you could use the values() method: dictionary.values().
+You want to use dictionaries when you plan on searching for a specific element.
+Set- Used when you want to store a bunch of elements and be certain that they are only present once. They are immutable.
+Dictionary Methods Cheat Sheet
+Definition
+x = {key1:value1, key2:value2}
+Operations
+len(dictionary) - Returns the number of items in the dictionary
+for key in dictionary - Iterates over each key in the dictionary
+for key, value in dictionary.items() - Iterates over each key,value pair in the dictionary
+if key in dictionary - Checks whether the key is in the dictionary
+dictionary[key] - Accesses the item with key key of the dictionary
+dictionary[key] = value - Sets the value associated with key
+del dictionary[key] - Removes the item with key key from the dictionary
+Methods
+dict.get(key, default) - Returns the element corresponding to key, or default if it's not present
+dict.keys() - Returns a sequence containing the keys in the dictionary
+dict.values() - Returns a sequence containing the values in the dictionary
+dict.update(other_dictionary) - Updates the dictionary with the items coming from the other dictionary. Existing entries will be replaced; new entries will be added.
+dict.clear() - Removes all the items of the dictionary
+Check out the official documentation for dictionary operations and methods.
+
+
